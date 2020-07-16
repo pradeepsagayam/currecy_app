@@ -1,0 +1,5 @@
+rootProject.name = "Currency_app_dagger"
+
+include ':app'
+include ':currency_service'
+include ':network'

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Currency_app_dagger</string>
+    <string name="failed_message">Failed to download Currency data</string>
+    <string name="page_title_converter">Converter</string>
+</resources>

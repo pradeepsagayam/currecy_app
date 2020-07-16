@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="CurrencyToolbarStyle" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/tool_bar_background</item>
+    </style>
+
+    <style name="CurrencyToolBarTitle">
+        <item name="android:textSize">@dimen/text_size_h1</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+</resources>

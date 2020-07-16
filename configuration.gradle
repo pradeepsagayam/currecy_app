@@ -1,0 +1,19 @@
+ext.appVersion = [
+        versionCode: 1,
+        versionName: '1.0',
+]
+
+ext.sdk = [
+        compileSdkVersion: 29,
+        minSdkVersion    : 19,
+        targetSdkVersion : 29,
+        buildToolVersion : "29.0.2",
+]
+
+ext.appDetails = [
+        applicationId: "com.prad.dagger.app"
+]
+
+ext.testRunner = [
+        espressoRunner: "com.prad.dagger.app.EspressoTestRunner"
+]
