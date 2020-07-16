@@ -4,6 +4,7 @@ import com.prad.dagger.app.main.list.CurrencyListViewModel
 import com.prad.dagger.app.main.list.viewmodels.CurrencyListCurrencyViewModel
 import com.prad.dagger.app.service.CurrencyDetails
 import com.prad.dagger.app.service.CurrencyResult.Success
+import java.math.BigDecimal
 import javax.inject.Inject
 
 class CurrencyViewModelFactory @Inject constructor(
@@ -18,18 +19,28 @@ class CurrencyViewModelFactory @Inject constructor(
             .map {
                 val country = currencyCountryStore.getCountry(it.code)
 
+                val convertedAmount = getConvertedValue(
+                    baseCurrencyDetails.value,
+                    it.value,
+                    country!!.symbol
+                )
+
                 CurrencyListCurrencyViewModel(
                     it.code,
-                    getConvertedValue(baseCurrencyDetails!!.value, it.value),
-                    country!!.name,
+                    convertedAmount,
+                    country.name,
                     getFromCurrency(baseCurrencyDetails, it)
                 )
             }
     }
 
-    private fun getConvertedValue(baseCurrencyValue: Double, currencyValue: Double): String {
+    private fun getConvertedValue(
+        baseCurrencyValue: Double,
+        currencyValue: Double,
+        symbol: String
+    ): String {
 
-        return (currencyValue * baseCurrencyValue).toString()
+        return symbol + " " + (currencyValue * baseCurrencyValue).toString()
     }
 
     private fun getFromCurrency(
@@ -37,12 +48,15 @@ class CurrencyViewModelFactory @Inject constructor(
         currencyDetails: CurrencyDetails
     ): String {
         val format = "%s %s = %s %s"
+        val divident = baseCurrencyDetails!!.value / currencyDetails.value
+        var bd = BigDecimal(divident)
+        bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP)
 
         return String.format(
             format,
-            currencyDetails.value.toString(),
+            "1",
             currencyDetails.code,
-            baseCurrencyDetails!!.value.toString(),
+            bd.toString(),
             baseCurrencyDetails.code
         )
     }
