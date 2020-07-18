@@ -1,4 +1,4 @@
-package com.prad.dagger.app.main.list
+package com.prad.dagger.app.main.currency.list
 
 interface CurrencyListViewModel {
 

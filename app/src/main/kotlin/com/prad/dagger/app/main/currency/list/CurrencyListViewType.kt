@@ -1,7 +1,7 @@
-package com.prad.dagger.app.main.list
+package com.prad.dagger.app.main.currency.list
 
 import androidx.annotation.IntDef
-import com.prad.dagger.app.main.list.CurrencyListViewType.Companion.CURRENCY
+import com.prad.dagger.app.main.currency.list.CurrencyListViewType.Companion.CURRENCY
 
 @Retention(AnnotationRetention.SOURCE)
 @IntDef(

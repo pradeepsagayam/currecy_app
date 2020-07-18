@@ -1,6 +1,6 @@
 package com.prad.dagger.app.main
 
-import com.prad.dagger.app.main.list.CurrencyListViewModel
+import com.prad.dagger.app.main.currency.list.CurrencyListViewModel
 
 class MainContract {
 

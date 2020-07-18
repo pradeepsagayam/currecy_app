@@ -2,10 +2,12 @@ package com.prad.dagger.app.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.prad.dagger.app.R
-import com.prad.dagger.app.main.list.CurrencyListAdapter
-import com.prad.dagger.app.main.list.CurrencyListViewModel
+import com.prad.dagger.app.databinding.ActivityMainBinding
+import com.prad.dagger.app.main.currency.list.CurrencyListAdapter
+import com.prad.dagger.app.main.currency.list.CurrencyListViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_currency.*
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         setupToolbarTitle()
         presenter.setView(this)
         recyclerView.layoutManager = LinearLayoutManager(this)

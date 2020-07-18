@@ -1,13 +1,13 @@
-package com.prad.dagger.app.main.list
+package com.prad.dagger.app.main.currency.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.prad.dagger.app.R
-import com.prad.dagger.app.main.list.CurrencyListViewType.Companion.CURRENCY
-import com.prad.dagger.app.main.list.viewholders.CurrencyListCurrencyViewHolder
-import com.prad.dagger.app.main.list.viewmodels.CurrencyListCurrencyViewModel
+import com.prad.dagger.app.main.currency.list.CurrencyListViewType.Companion.CURRENCY
+import com.prad.dagger.app.main.currency.list.viewholders.CurrencyListCurrencyViewHolder
+import com.prad.dagger.app.main.currency.list.viewmodels.CurrencyListCurrencyViewModel
 import javax.inject.Inject
 
 

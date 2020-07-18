@@ -1,5 +1,6 @@
 package com.prad.dagger.app.main
 
+import com.prad.dagger.app.main.currency.CurrencyViewModelFactory
 import com.prad.dagger.app.service.CurrencyProvider
 import com.prad.dagger.app.service.CurrencyResult
 import io.reactivex.disposables.CompositeDisposable

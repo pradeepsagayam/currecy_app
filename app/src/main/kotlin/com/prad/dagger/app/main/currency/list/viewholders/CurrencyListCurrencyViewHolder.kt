@@ -1,4 +1,4 @@
-package com.prad.dagger.app.main.list.viewholders
+package com.prad.dagger.app.main.currency.list.viewholders
 
 import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.prad.dagger.app.R
-import com.prad.dagger.app.main.list.viewmodels.CurrencyListCurrencyViewModel
+import com.prad.dagger.app.main.currency.list.viewmodels.CurrencyListCurrencyViewModel
 import java.util.*
 
 class CurrencyListCurrencyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -23,9 +23,6 @@ class CurrencyListCurrencyViewHolder(itemView: View) : RecyclerView.ViewHolder(i
 
     @BindView(R.id.convertedAmount)
     lateinit var convertedAmount: AppCompatTextView
-
-    @BindView(R.id.fromBaseCurrency)
-    lateinit var fromBaseCurrency: AppCompatTextView
 
     init {
         ButterKnife.bind(this, itemView)
@@ -48,7 +45,5 @@ class CurrencyListCurrencyViewHolder(itemView: View) : RecyclerView.ViewHolder(i
         currencyCode.text = viewModel.currencyCode
         currencyName.text = viewModel.currencyName
         convertedAmount.text = viewModel.convertedAmount
-        fromBaseCurrency.text = viewModel.fromBaseCurrency
-
     }
 }
